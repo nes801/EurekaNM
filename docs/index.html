@@ -6,16 +6,165 @@
 <head>
   <meta charset="UTF-8">
   <title>エウレカNM管理</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.4.3/pixi.min.js"></script>
   <script type="text/javascript" src="file-import.js"></script>
   <script type="text/javascript" src="circle.js"></script>
+  <script type="text/javascript" src="detail.js"></script>
   <script type="text/javascript" src="time-keep.js"></script>
+  <script type="text/javascript" src="timepicki.js"></script>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/timepicki.css">
 </head>
 <body>
   <div class= "contents">
     <h2>エウレカNM管理ツール ver 1.0</h2>
     <div align=center id="pixiview"></div>
+    <table>
+      <tbody id="enemy_table">
+      <div class="left">
+      <tr>
+        <td width=30px></td>
+        <td width=100px></td>
+        <td width="200px"><input type="text" id="time1"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time2"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time3"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time4"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time5"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time6"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time7"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time8"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time9"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time10"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+    </div>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time11"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time12"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time13"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time14"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time15"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time16"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time17"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time18"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time19"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><input type="text" id="time20"  class ="timeclass" value="--:--"></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+
+      <!-- <input type="text" id="time3"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time4"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time5"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time6"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time7"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time8"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time9"  class ="timeclass" value="--:--"><br>
+      <input type="text" id="time10" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time11" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time12" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time13" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time14" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time15" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time16" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time17" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time18" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time19" class ="timeclass" value="--:--"><br>
+      <input type="text" id="time20" class ="timeclass" value="--:--"><br> -->
       <span id="nm_info"></span>
     </div>
   </div>
@@ -23,6 +172,5 @@
     <div class="copyright">記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。<br>
                             Copyright (C) 2010 - 2018 SQUARE ENIX CO., LTD. All Rights Reserved.</div>
   </div>
-
 </body>
 </html>

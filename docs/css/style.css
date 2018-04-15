@@ -13,3 +13,7 @@ div.copyright {
   text-align: center;
   font-size: 3px;
 }
+
+div.left{
+  float: left;
+}

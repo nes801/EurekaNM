@@ -24,6 +24,7 @@ function setup(){
   map=PIXI.Texture.fromImage("images/map.jpg");
   stage.addChild(new PIXI.Sprite(map));
   resize();
+  setTableAll(objs);
   initCircle(objs);
 }
 
@@ -47,6 +48,7 @@ function initCircle(objs){
     //モンスターの情報に円(circle)を追加
     objs[obj].circle=createCircle(x,y,MAX_CIRCLE_SIZE,END_CIRCLE_COLOR);
   }
+
 }
 
 //円を生成、イベントアクションの登録
@@ -68,11 +70,13 @@ function createCircle(x,y,rad,color){
       if(objs[o].circle == this){
         setTime(objs[o]);
         objs[o].circle.tint=0xFE1E63;
+        //データピッカーを特定するためにidを生成
+        var id ="time"+objs[o].No;
+        //データピッカー内の値を変更
+        document.getElementById(id).value=dateFormat(objs[o].time);
         redrawCircle();
       }
     }
-
-    requestAnimationFrame(animate);
   });
 
   return circle;
@@ -130,15 +134,14 @@ function colorGradCalc(percent){
 }
 
 function animate(){
-	//再帰的に呼び出す
-	// requestAnimationFrame(animate);
 	app.render(stage);
   document.getElementById("pixiview").appendChild(app.view);
-  var str="";
-  for(o in objs){
-    //(time||'noDate')　timeの中身がなければnoDataって表示してくれる
-    str+=objs[o].No + " | " +objs[o].sName + " | "+(dateFormat(objs[o].time)||'noData')+" | "+calcTime(objs[o])+"<br>";
-  }
-  document.getElementById("nm_info").innerHTML=str;
+  // var str="";
+  // for(o in objs){
+  //   //(time||'noDate')　timeの中身がなければnoDataって表示してくれる
+  //   str+=objs[o].No + " | " +objs[o].sName + " | "+(dateFormat(objs[o].time)||'noData')+" | "+calcTime(objs[o])+"<br>";
+  // }
+  // document.getElementById("nm_info").innerHTML=str;
+  setTableAll(objs);
 
 }
